@@ -1,0 +1,31 @@
+<div class="primary-color card">
+  <span>Usuários Cadastrados</span>
+  <div>
+    <input class="mat-input" placeholder="Pesquisar" [(ngModel)]="searchTerm">
+  </div>
+</div>
+
+<div class="users-container">
+  <div class="user-card" *ngFor="let user of users">
+    <div>
+      <img class="mat-card-avatar" [src]="user.photo" alt="Foto do usuário">
+      <div>{{ user.name }}</div>
+    </div>
+    <div>
+      <button class="mat-button primary-color" (click)="startChat(user)">Conversar</button>
+    </div>
+  </div>
+</div>
+
+<div class="accent-color">
+  <div>
+    <span>Usuário Logado</span>
+  </div>
+</div>
+
+<div class="user-card">
+  <div>
+    <img class="mat-card-avatar" [src]="currentUser.photo" alt="Foto do usuário logado">
+    <div>{{ currentUser.name }}</div>
+  </div>
+</div>
