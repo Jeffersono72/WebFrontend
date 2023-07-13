@@ -1,0 +1,10 @@
+.users-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-card {
+  width: 300px;
+  margin-bottom: 20px;
+}

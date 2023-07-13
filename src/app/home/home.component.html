@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Usuários Cadastrados</span>
+    <mat-form-field>
+      <input matInput placeholder="Pesquisar" [(ngModel)]="searchTerm">
+    </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="users-container">
+  <mat-card class="user-card" *ngFor="let user of users | filter: searchTerm">
+    <mat-card-header>
+      <img mat-card-avatar [src]="user.photo" alt="Foto do usuário">
+      <mat-card-title>{{ user.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="startChat(user)">Conversar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<mat-toolbar color="accent">
+  <mat-toolbar-row>
+    <span>Usuário Logado</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="user-card">
+  <mat-card-header>
+    <img mat-card-avatar [src]="currentUser.photo" alt="Foto do usuário logado">
+    <mat-card-title>{{ currentUser.name }}</mat-card-title>
+  </mat-card-header>
+</mat-card>
